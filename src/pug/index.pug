@@ -1,0 +1,16 @@
+extends layout/app
+
+block  page 
+
+    include chunk/header 
+
+    h1 Главная
+
+    ul
+        each item in news
+            li= item.name
+                br
+                a= item.body
+
+    button Нажми на меня!
+    include chunk/footer

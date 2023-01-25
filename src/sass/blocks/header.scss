@@ -1,0 +1,93 @@
+
+header{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+
+    .header__block{
+
+        h1{
+            color:rgb(255, 241, 219);
+            font-weight: bold;
+            font-size: 44px;
+            text-align: center;
+        }
+
+        .header__calc{
+            border: 2px solid white;
+            border-radius: 25px;
+            padding: 0 20px;
+            margin-bottom: 20px;
+        
+            .header__inputs{
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+                gap: 20px;
+                justify-content: center;
+        
+                .header__input-value{
+                    padding: 12px;
+                    outline: none;
+                    border-radius: 20px;
+                    border: none;
+                }
+            }
+        
+            .header__buttons{
+                display: flex;
+                justify-content: center;
+                gap: 12px;
+                margin-bottom: 20px;
+        
+                .header__btn{
+                    padding: 12px 20px;
+                    background-color: rgb(29, 109, 81);
+                    border: none;
+                    border-radius: 20px;
+                    color: white;           
+                    cursor: pointer; 
+                }
+            }
+        
+            .header_answer{
+                display: flex;
+                gap: 12px;
+                font-size: 20px;
+                padding-bottom: 20px;
+                color: white;
+            }
+        }
+
+        .header__reverse{
+            border: 2px solid white;
+            border-radius: 25px;
+            padding: 0 20px;
+
+            .header__reverse__inputs{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 20px;
+                flex-wrap: wrap;
+                gap: 20px;
+
+                .header__reverse__input{
+                    padding: 12px;
+                    outline: none;
+                    border-radius: 20px;
+                    border: none;
+                    width: 80%;
+
+                    &.your__text::placeholder{
+                        color: black;
+                    }
+                }
+
+            }
+        
+        }
+    }
+}

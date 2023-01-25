@@ -1,0 +1,15 @@
+
+// чтобы добавить разрешения экрана: пример
+// @mixin tab {
+//     @media (max-width: 770px) {
+//         @content;
+//     }
+// }
+body{
+    
+    background-color: rgb(53, 125, 19);
+
+    // чтобы добавить поддиректорию
+
+    @import "./blocks/*.scss";
+}
