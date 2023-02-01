@@ -1,93 +1,226 @@
+header {
+    background: rgba(24, 24, 32, 0.75);
+    backdrop-filter: blur(50px);
+    padding: 15px 0;
+    overflow: hidden;
 
-header{
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
+    @include xs {
+        padding: 25px 0 15px 0;
+    }
 
     .header__block{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-        h1{
-            color:rgb(255, 241, 219);
-            font-weight: bold;
-            font-size: 44px;
-            text-align: center;
+        @include md {
+            gap: 0 60px;
         }
 
-        .header__calc{
-            border: 2px solid white;
-            border-radius: 25px;
-            padding: 0 20px;
-            margin-bottom: 20px;
-        
-            .header__inputs{
-                display: flex;
-                align-items: center;
-                margin-bottom: 20px;
-                gap: 20px;
-                justify-content: center;
-        
-                .header__input-value{
-                    padding: 12px;
-                    outline: none;
-                    border-radius: 20px;
-                    border: none;
-                }
+        @include sm {
+            gap: 0 20px;
+        }
+
+        @include xs {
+            gap: 20px 0;
+        }
+
+        @include xs {
+            flex-wrap: wrap;
+        }
+
+        .header__l__side {
+            display: flex;
+            align-items: center;
+            gap: 0 100px;
+
+            @include lg {
+                gap: 0 80px;
             }
-        
-            .header__buttons{
-                display: flex;
-                justify-content: center;
-                gap: 12px;
-                margin-bottom: 20px;
-        
-                .header__btn{
-                    padding: 12px 20px;
-                    background-color: rgb(29, 109, 81);
-                    border: none;
-                    border-radius: 20px;
-                    color: white;           
-                    cursor: pointer; 
-                }
+
+            @include md {
+                gap: 0 20px;
             }
-        
-            .header_answer{
-                display: flex;
-                gap: 12px;
-                font-size: 20px;
-                padding-bottom: 20px;
-                color: white;
+
+            .header__logo {
+                z-index: 15;
+            }
+
+            .header__nav-menu {
+
+                .header__lists {
+                    display: flex;
+                    align-items: center;
+                    list-style: none;
+                    gap: 0 60px;
+
+                    @include lg {
+                        gap: 0 20px;
+                    }
+
+                    @include md {
+                        position: fixed;
+                        right: -100%;
+                        top: 0;
+                        background: rgba(24, 24, 32, 1);
+                        backdrop-filter: blur(50px);
+                        flex-direction: row;
+                        justify-content: center;
+                        width: 100%;
+                        height: 100%;
+                        text-align: center;
+                        transition: 0.3s all ease;
+
+                        &.active {
+                            right: 0;
+                            z-index: 5;
+                        }
+                    }
+
+                    @include xs {
+                        flex-direction: column;
+                    }
+
+                    .header__list{
+
+                        .header__list__link {
+                            text-decoration: none;
+                            font-weight: 400;
+                            font-size: 18px;
+                            line-height: 22px;
+                            color: #F2F2FA;
+                        }
+                    }
+                }
             }
         }
 
-        .header__reverse{
-            border: 2px solid white;
-            border-radius: 25px;
-            padding: 0 20px;
+        .header__r__side {
 
-            .header__reverse__inputs{
+            @include md {
+                padding-right: 55px;
+            }
+
+            @include xs {
+                justify-content: center;
+                padding-right: 0;
+                text-align: center;
+            }
+
+            .header__r__links{
                 display: flex;
                 align-items: center;
-                justify-content: center;
-                margin-bottom: 20px;
-                flex-wrap: wrap;
-                gap: 20px;
+                gap: 0 20px;
 
-                .header__reverse__input{
-                    padding: 12px;
-                    outline: none;
-                    border-radius: 20px;
-                    border: none;
-                    width: 80%;
+                @include xs {
+                    gap: 10px;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                }
 
-                    &.your__text::placeholder{
-                        color: black;
+                a {
+                    text-decoration: none;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 140%;
+                }
+
+                .header__sign__in{
+                    background: linear-gradient(0deg, rgba(242, 242, 250, 0.5), rgba(242, 242, 250, 0.5)), linear-gradient(94.95deg, #A4FFB8 2.9%, #46A6FF 101.18%);
+                    border-radius: 5px;
+                    padding: 13px 50px;
+                    position: relative;
+                    display: inline-block;
+
+                    & span {
+                        background: linear-gradient(0deg, rgba(242, 242, 250, 0.5), rgba(242, 242, 250, 0.5)), linear-gradient(94.95deg, #A4FFB8 2.9%, #46A6FF 101.18%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        text-fill-color: transparent;
+                        display: block;
+                        position: relative;
+                        z-index: 2;
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        display: block;
+                        width: calc(100% - 4px);
+                        height: calc(100% - 4px);
+                        background-color: rgba(24, 24, 32, 1);
+                        backdrop-filter: blur(50px);
+                        border-radius: 5px;
+                        top: 2px;
+                        left: 2px;
                     }
                 }
 
+                .header__sign__up{
+                    color: #0C0C14;
+                    padding: 13px 40px;
+                    background: linear-gradient(94.95deg, #A4FFB8 2.9%, #46A6FF 101.18%);
+                    border-radius: 5px;
+                }
             }
+
+            .header__hamburger{
+                display: none;
         
+                @include md {
+                    display: block;
+                    position: fixed;
+                    top: 15px;
+                    right: 15px;
+                    cursor: pointer;
+                    z-index: 10;
+                }
+        
+                .header_hamburger-menu{
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
+                    display: flex;
+                    padding: 0;
+                }
+        
+                .line {
+                    fill: none;
+                    stroke: #46A6FF;
+                    stroke-width: 6;
+                    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+                      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+                }
+                .line1 {
+                    stroke-dasharray: 60 207;
+                    stroke-width: 6;
+                }
+                .line2 {
+                    stroke-dasharray: 60 60;
+                    stroke-width: 6;
+                }
+                .line3 {
+                    stroke-dasharray: 60 207;
+                    stroke-width: 6;
+                }
+                .opened .line1 {
+                    stroke-dasharray: 90 207;
+                    stroke-dashoffset: -134;
+                    stroke-width: 6;
+                }
+                .opened .line2 {
+                    stroke-dasharray: 1 60;
+                    stroke-dashoffset: -30;
+                    stroke-width: 6;
+                }
+                .opened .line3 {
+                    stroke-dasharray: 90 207;
+                    stroke-dashoffset: -134;
+                    stroke-width: 6;
+                }
+            }
         }
     }
 }

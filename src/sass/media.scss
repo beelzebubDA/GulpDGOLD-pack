@@ -1,0 +1,90 @@
+// DExtra large devices | Desktops
+@mixin xxxl {
+
+    @media (min-width: 1600px) and (max-width: 1920px) {
+
+        .container {
+            width: 1520px;
+        }
+
+        @content;
+    }
+}
+
+// AExtra large devices | Desktops
+@mixin xxl {
+
+    @media (min-width: 1360px) {
+
+        .container {
+            width: 1340px;
+        }
+
+        @content;
+    }
+}
+
+// Extra large devices | Desktops (≥75em)
+@mixin xl {
+
+    @media (min-width: 1200px) {
+
+        .container {
+
+            width: 1140px;
+        }
+
+        @content;
+    }
+}
+
+
+// Large devices | Desktops (≥62em)
+@mixin lg {
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+
+        .container {
+            width: 980px;
+        }
+
+        @content;
+    }
+}
+
+// Medium devices | Tablets (≥48em)
+@mixin md {
+
+    @media (min-width: 768px) and (max-width: 991px) {
+
+        .container {            
+            width: 720px;
+        }
+
+        @content;
+    }
+}
+
+// Small devices | Landscape phones (≥34em)
+@mixin sm {
+    @media (min-width: 540) and (max-width: 767px){
+
+        .container {
+            width: 510px;
+        }
+
+        @content;
+    }
+}
+
+// Extra small devices | Portrait phones (<34em : 22.5em)
+@mixin xs {
+    @media (max-width:380px) {
+
+        .container {
+            width: 100%;
+        }
+
+        @content;
+    }
+}

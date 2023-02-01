@@ -9,11 +9,10 @@ const app = require("../config/app.js");
 const plumber = require("gulp-plumber");
 const notify = require("gulp-notify");
 const babel = require("gulp-babel");
-const rename = require("gulp-rename");
 const minify = require("gulp-minify");
 const rigger = require("gulp-rigger");
 // при необходимости чтобы все js работали
-const webpack = require("webpack-stream");
+// const webpack = require("webpack-stream");
 
 
 // обработка JavaScript
@@ -30,7 +29,8 @@ const js = () => {
         //получение js
         .pipe(babel())
         .pipe(rigger())
-        .pipe(webpack(app.webpack))
+        .pipe(dest(path.js.dest, { sourcemaps: app.isDev}))
+        .pipe(minify())
         .pipe(dest(path.js.dest, { sourcemaps: app.isDev}))
 }
 

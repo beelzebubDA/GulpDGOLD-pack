@@ -11,10 +11,13 @@
 
     @@include("./chunk/header.html")
 
+    @@include("./chunk/hero.html")
+
     @@loop("./chunk/news-item.html", "../../data/news.json")
 
     @@include("./chunk/footer.html")
 
-    <script src="js/main.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="js/main.js"></script>  
 </body>
 </html>
