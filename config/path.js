@@ -1,5 +1,6 @@
 const pathSrc = "./src";
 const pathDest = "./dist";
+const assets = pathDest + "/assets";
 
 module.exports = {
     root: pathDest,
@@ -19,30 +20,30 @@ module.exports = {
     css: {
         src: pathSrc + "/css/*.css",
         watch: pathSrc + "/css/**/*.css",
-        dest: pathDest + "/css"
+        dest: assets + "/css"
     },
 
     scss: {
         src: pathSrc + "/sass/*.{sass,scss}",
         watch: pathSrc + "/sass/**/*.{sass,scss}",
-        dest: pathDest + "/css"
+        dest: assets + "/css"
     },
 
     js: {
         src: pathSrc + "/js/*.js",
         watch: pathSrc + "/js/**/*.js",
-        dest: pathDest + "/js"
+        dest: assets + "/js"
     },
 
     img: {
         src: pathSrc + "/img/*.{png,jpg,jpeg,gif,svg,ico}",
         watch: pathSrc + "/img/**/*.{png,jpg,jpeg,gif,svg,ico}",
-        dest: pathDest + "/img"
+        dest: assets + "/img"
     },
 
     font: {
         src: pathSrc + "/font/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}",
         watch: pathSrc + "/font/**/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}",
-        dest: pathDest + "/font"
+        dest: assets + "/font"
     },
 }

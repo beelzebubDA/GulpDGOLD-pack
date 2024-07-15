@@ -8,7 +8,8 @@ const server = () => {
     browserSync.init({
         server: {
             baseDir: path.root
-        }
+        },
+        notify: false
     });
 }
 
@@ -65,8 +66,7 @@ exports.dev = dev;
 
 
 // Сборка
-exports.default = app.isProd
-    ? build
-    : dev;
+exports.default = app.isProd ? build : dev;
+// exports.clear = del;
 
 // Чтобы выйти из режима наблюдателя нужно нажать Ctrl + C
