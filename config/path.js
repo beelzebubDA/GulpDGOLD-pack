@@ -46,4 +46,12 @@ module.exports = {
         watch: pathSrc + "/font/**/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}",
         dest: assets + "/font"
     },
+
+    libs: {
+        // для каждой библиотеки надо подключать только min вариант в src
+        // добавление Jquery.min.js и jquery.magnific-popup.min.js
+        src: [pathSrc + "/libs/jquery/dist/jquery.min.js", 
+              pathSrc + "/libs/magnific-popup/dist/jquery.magnific-popup.min.js"],
+        dest: assets + "/libs"
+    }
 }

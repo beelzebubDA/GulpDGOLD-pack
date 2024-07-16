@@ -25,6 +25,7 @@ const js = require("./tasks/js.js");
 const img = require("./tasks/img.js"); 
 const font = require("./tasks/font.js");
 const pug = require("./tasks/pug.js");
+const libs = require("./tasks/libs.js");
 const clear = require("./tasks/clear.js");
 
 // Наблюдение за изменениями каждого объекта
@@ -42,7 +43,7 @@ const watcher = () => {
 
 const build = series(
     clear,
-    parallel(html, scss, js, img, font),
+    parallel(html, scss, libs, js, img, font),
 );
 
 const dev = series(
@@ -62,11 +63,11 @@ exports.clear = clear;
 exports.watch = watcher;
 exports.clear = clear;
 exports.build = build;
+exports.libs = libs;
 exports.dev = dev;
 
 
 // Сборка
 exports.default = app.isProd ? build : dev;
-// exports.clear = del;
 
 // Чтобы выйти из режима наблюдателя нужно нажать Ctrl + C

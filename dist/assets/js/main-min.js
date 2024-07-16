@@ -1,0 +1,1 @@
+"use strict";console.log("JS проверка"),console.log("Здесь буду писать скрипты"),$(".header__hamburger").on("click",function(e){e.preventDefault(),$(".header__hamburger").toggleClass("active"),$(".header__lists").toggleClass("active")});

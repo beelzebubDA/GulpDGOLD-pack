@@ -18,7 +18,7 @@ const rigger = require("gulp-rigger");
 // обработка JavaScript
 const js = () => {
 
-    return src(path.js.src, { sourcemaps: app.isDev })
+    return src(path.js.src)
         //Добавление плагинов в проект
         .pipe(plumber({
             errorHandler: notify.onError(error => ({
