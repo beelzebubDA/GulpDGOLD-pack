@@ -1,9 +1,9 @@
-const  { src, dest } = require("gulp");
+const  { src, dest }        = require("gulp");
 
 // Конфигурации
 
-const path = require("../config/path.js");
-const app = require("../config/app.js");
+const path                  = require("../config/path.js");
+const app                   = require("../config/app.js");
 
 // Плагины
 
@@ -11,13 +11,13 @@ const app = require("../config/app.js");
 // const plugins = require('gulp-load-plugins')();
 
 
-const plumber = require("gulp-plumber");
-const notify = require("gulp-notify");
-const fileinclude = require('gulp-file-include');
-const htmlmin = require('gulp-htmlmin');
-const size = require('gulp-size');
-const webpHtml = require('gulp-webp-html');
-const rename = require("gulp-rename");
+const plumber               = require("gulp-plumber");
+const notify                = require("gulp-notify");
+const fileinclude           = require('gulp-file-include');
+const htmlmin               = require('gulp-htmlmin');
+const size                  = require('gulp-size');
+const webpHtml              = require('gulp-webp-html');
+const rename                = require("gulp-rename");
 
 // обработка HTML
 const html = () => {
@@ -41,4 +41,4 @@ const html = () => {
         .pipe(dest(path.html.dest));
 }
 
-module.exports = html;
+module.exports              = html;

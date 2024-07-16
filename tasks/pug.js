@@ -1,15 +1,15 @@
-const  { src, dest } = require("gulp");
+const  { src, dest }        = require("gulp");
 
 // Конфигурации
 
-const path = require("../config/path.js");
-const app = require("../config/app.js");
+const path                  = require("../config/path.js");
+const app                   = require("../config/app.js");
 
 // Плагины
-const plumber = require("gulp-plumber");
-const notify = require("gulp-notify");
-const pugs = require('gulp-pug');
-const webpHtml = require('gulp-webp-html');
+const plumber               = require("gulp-plumber");
+const notify                = require("gulp-notify");
+const pugs                  = require('gulp-pug');
+const webpHtml              = require('gulp-webp-html');
 
 // обработка PUG
 const pug = () => {
@@ -28,4 +28,4 @@ const pug = () => {
         .pipe(dest(path.pug.dest));
 }
 
-module.exports = pug;
+module.exports              = pug;

@@ -1,24 +1,24 @@
-const  { src, dest } = require("gulp");
+const  { src, dest }        = require("gulp");
 
 
 // Конфигурации
-const path = require("../config/path.js");
+const path                  = require("../config/path.js");
 
 
 // Плагины
-const plumber = require("gulp-plumber");
-const notify = require("gulp-notify");
-const concat = require("gulp-concat");
-const cssimport = require("gulp-cssimport");
-const autoprefixer = require("gulp-autoprefixer");
-const csso = require("gulp-csso");
-const rename = require("gulp-rename");
-const size = require("gulp-size");
-const cssBeautify = require("gulp-cssbeautify");
-const shorthand = require("gulp-shorthand");
-const groupCssMediaQueries = require("gulp-group-css-media-queries");
-const webpCss = require("gulp-webp-css");
-const app = require("../config/app.js");
+const plumber               = require("gulp-plumber");
+const notify                = require("gulp-notify");
+const concat                = require("gulp-concat");
+const cssimport             = require("gulp-cssimport");
+const autoprefixer          = require("gulp-autoprefixer");
+const csso                  = require("gulp-csso");
+const rename                = require("gulp-rename");
+const size                  = require("gulp-size");
+const cssBeautify           = require("gulp-cssbeautify");
+const shorthand             = require("gulp-shorthand");
+const groupCssMediaQueries  = require("gulp-group-css-media-queries");
+const webpCss               = require("gulp-webp-css");
+const app                   = require("../config/app.js");
 
 
 // обработка CSS
@@ -52,4 +52,4 @@ const css = () => {
         .pipe(dest(path.css.dest, { sourcemaps: app.isDev}));
 }
 
-module.exports = css;
+module.exports              = css;

@@ -1,6 +1,6 @@
 
-const isProd = process.argv.includes("--production");
-const isDev = !isProd;
+const isProd        = process.argv.includes("--production");
+const isDev         = !isProd;
 
 
 module.exports = {

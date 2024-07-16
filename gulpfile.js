@@ -2,7 +2,7 @@
 const  { watch, series, parallel } = require("gulp");
 
 // подключение НАБЛЮДАТЕЛЯ
-const browserSync = require("browser-sync").create();
+const browserSync        = require("browser-sync").create();
 // Сервер
 const server = () => {
     browserSync.init({
@@ -14,19 +14,20 @@ const server = () => {
 }
 
 // Конфигурации
-const path = require("./config/path.js");
-const app = require("./config/app.js");
+const path              = require("./config/path.js");
+const app               = require("./config/app.js");
 
 // Задачи
 // подключение задач
-const html = require("./tasks/html.js");
-const scss = require("./tasks/scss.js");
-const js = require("./tasks/js.js");
-const img = require("./tasks/img.js"); 
-const font = require("./tasks/font.js");
-const pug = require("./tasks/pug.js");
-const libs = require("./tasks/libs.js");
-const clear = require("./tasks/clear.js");
+const html              = require("./tasks/html.js");
+const scss              = require("./tasks/scss.js");
+const js                = require("./tasks/js.js");
+const img               = require("./tasks/img.js"); 
+const font              = require("./tasks/font.js");
+const pug               = require("./tasks/pug.js");
+const libs              = require("./tasks/libs.js");
+const libsCss           = require("./tasks/libsCss.js");
+const clear             = require("./tasks/clear.js");
 
 // Наблюдение за изменениями каждого объекта
 const watcher = () => {
@@ -43,7 +44,7 @@ const watcher = () => {
 
 const build = series(
     clear,
-    parallel(html, scss, libs, js, img, font),
+    parallel(html, libsCss, scss, libs, js, img, font),
 );
 
 const dev = series(
@@ -53,21 +54,21 @@ const dev = series(
 
 // Задачи
 // подключение задач для вызова
-exports.html = html;
-exports.scss = scss;
-exports.js = js;
-exports.img = img;
-exports.font = font;
-exports.pug = pug;
-exports.clear = clear;
-exports.watch = watcher;
-exports.clear = clear;
-exports.build = build;
-exports.libs = libs;
-exports.dev = dev;
+exports.html            = html;
+exports.scss            = scss;
+exports.js              = js;
+exports.img             = img;
+exports.font            = font;
+exports.pug             = pug;
+exports.clear           = clear;
+exports.watch           = watcher;
+exports.clear           = clear;
+exports.build           = build;
+exports.libs            = libs;
+exports.dev             = dev;
 
 
 // Сборка
-exports.default = app.isProd ? build : dev;
+exports.default         = app.isProd ? build : dev;
 
 // Чтобы выйти из режима наблюдателя нужно нажать Ctrl + C

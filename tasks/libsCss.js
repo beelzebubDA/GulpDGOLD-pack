@@ -5,16 +5,16 @@ const path              = require("../config/path.js");
 const app               = require("../config/app.js");
 
 // Плагины
+const cssnano           = require("gulp-cssnano");
 const concat            = require("gulp-concat");
-const uglify            = require("gulp-uglify");
 
 // обработка Js библиотек
-const libs = () => {
-    return src(path.libs.src, { sourcemaps: app.isDev })
+const libsCss = () => {
+    return src(path.libsCss.src, { sourcemaps: app.isDev })
         //Добавление плагинов в проект
-       .pipe(concat("libs.min.js"))
-       .pipe(uglify())
-       .pipe(dest(path.libs.dest));
+        .pipe(concat("libs.min.css"))
+        .pipe(cssnano())
+        .pipe(dest(path.libsCss.dest));
 }
 
-module.exports          = libs;
+module.exports          = libsCss;

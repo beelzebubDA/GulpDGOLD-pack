@@ -1,18 +1,18 @@
-const  { src, dest } = require("gulp");
+const  { src, dest }        = require("gulp");
 
 
 // Конфигурации
-const path = require("../config/path.js");
-const app = require("../config/app.js");
+const path                  = require("../config/path.js");
+const app                   = require("../config/app.js");
 
 
 // Плагины
-const plumber = require("gulp-plumber");
-const notify = require("gulp-notify");
-const imagemin = require("gulp-imagemin");
-const newer = require("gulp-newer");
-const webp = require("gulp-webp");
-const gulpIf = require("gulp-if");
+const plumber               = require("gulp-plumber");
+const notify                = require("gulp-notify");
+const imagemin              = require("gulp-imagemin");
+const newer                 = require("gulp-newer");
+const webp                  = require("gulp-webp");
+const gulpIf                = require("gulp-if");
 
 
 
@@ -37,4 +37,4 @@ const img = () => {
         .pipe(dest(path.img.dest));
 }
 
-module.exports = img;
+module.exports              = img;
